@@ -48,7 +48,12 @@ function showMood(mood) {
     document.getElementById("suggestions").innerHTML = `Mood: <b>${mood}</b> → Enjoy your playlist`;
 
     const playerDiv = document.getElementById("player");
-    playerDiv.innerHTML = `<iframe src="https://open.spotify.com/embed/playlist/${playlistId}" allow="encrypted-media" allowtransparency="true"></iframe>`;
+    // Make the iframe appear and allow autoplay
+    playerDiv.innerHTML = `
+        <iframe src="https://open.spotify.com/embed/playlist/${playlistId}"
+                width="100%" height="380" frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                allowtransparency="true"></iframe>`;
     playerDiv.style.opacity = 0;
     setTimeout(() => { playerDiv.style.opacity = 1; }, 100);
 
