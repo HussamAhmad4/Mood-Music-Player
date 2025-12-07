@@ -47,3 +47,11 @@ canvas {
     left: 0;
     z-index: 0;
 }
+
+#moodList {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #ccc;
+    opacity: 0.9;
+}
+
