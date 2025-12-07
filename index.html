@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mood Music Player</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Mood Music Player</h1>
+    <p class="subtitle">Type your mood and experience the vibe</p>
+
+    <input type="text" id="moodInput" placeholder="Type your mood (happy, sad...)">
+    <button onclick="playMood()">Play Mood</button>
+    <button id="randomBtn" onclick="playRandomMood()">Random Mood</button>
+
+    <div id="suggestions"></div>
+    <div id="player"></div>
+    <canvas id="animationCanvas"></canvas>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
 
