@@ -1,10 +1,10 @@
 const moodToSpotify = {
-    happy: "37i9dQZF1DX3rxVfibe1L0",
-    sad: "37i9dQZF1DWVrtsSlLKzro",
-    relaxed: "37i9dQZF1DX4sWSpwq3LiO",
-    angry: "37i9dQZF1DWYBO1MoTDhZI",
-    excited: "37i9dQZF1DX5trt9i14X7j",
-    tired: "37i9dQZF1DX4sWSpwq3LiO",
+    happy: "37i9dQZF1DXdPec7aLTmlC",
+    sad: "37i9dQZF1DX7qK8ma5wgG1",
+    relaxed: "37i9dQZF1DWU0ScTcjJBdj",
+    angry: "37i9dQZF1DWZqUHC2Kq6cT",
+    excited: "37i9dQZF1DX4dyzvuaRJ0n",
+    tired: "37i9dQZF1DX3YSRoSdA634",
     focused: "37i9dQZF1DX8NTLI2TtZa6",
     bored: "37i9dQZF1DX3rxVfibe1L0"
 };
