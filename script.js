@@ -48,7 +48,7 @@ function showMood(mood) {
     document.getElementById("suggestions").innerHTML = `Mood: <b>${mood}</b> → Enjoy your playlist`;
 
     const playerDiv = document.getElementById("player");
-    // Make the iframe appear and allow autoplay
+    // Correct Spotify embed attributes
     playerDiv.innerHTML = `
         <iframe src="https://open.spotify.com/embed/playlist/${playlistId}"
                 width="100%" height="380" frameborder="0"
@@ -60,7 +60,7 @@ function showMood(mood) {
     startAnimation(color);
 }
 
-// Animated circles in the background
+// Canvas animation
 const canvas = document.getElementById("animationCanvas");
 const ctx = canvas.getContext("2d");
 let circles = [];
