@@ -1,14 +1,16 @@
+// Playlists for each mood (working, public)
 const moodToSpotify = {
-    happy: "37i9dQZF1DXdPec7aLTmlC",
-    sad: "37i9dQZF1DX7qK8ma5wgG1",
-    relaxed: "37i9dQZF1DWU0ScTcjJBdj",
-    angry: "37i9dQZF1DWZqUHC2Kq6cT",
-    excited: "37i9dQZF1DX4dyzvuaRJ0n",
-    tired: "37i9dQZF1DX3YSRoSdA634",
-    focused: "37i9dQZF1DX8NTLI2TtZa6",
-    bored: "37i9dQZF1DX3rxVfibe1L0"
+    happy: ["37i9dQZF1DXdPec7aLTmlC", "37i9dQZF1DX3rxVfibe1L0"],        // Upbeat hits
+    sad: ["37i9dQZF1DX7qK8ma5wgG1", "37i9dQZF1DWZqUHC2Kq6cT"],           // Emotional/slow songs
+    relaxed: ["37i9dQZF1DWU0ScTcjJBdj"],                                 // Chill/lo-fi
+    angry: ["37i9dQZF1DWZqUHC2Kq6cT"],                                    // Aggressive/rock/electronic
+    excited: ["37i9dQZF1DX4dyzvuaRJ0n"],                                  // Party/energetic
+    tired: ["37i9dQZF1DX3YSRoSdA634"],                                     // Calm/relaxing
+    focused: ["37i9dQZF1DX8NTLI2TtZa6"],                                   // Study/work
+    bored: ["37i9dQZF1DX3rxVfibe1L0"]                                      // Mixed hits
 };
 
+// Background colors for each mood
 const moodColors = {
     happy: "#FFD700",
     sad: "#1E90FF",
@@ -22,21 +24,22 @@ const moodColors = {
 
 const moods = Object.keys(moodToSpotify);
 
+// Play mood from input
 function playMood() {
     const mood = document.getElementById("moodInput").value.toLowerCase().trim();
     showMood(mood);
 }
 
+// Play random mood
 function playRandomMood() {
     const randomMood = moods[Math.floor(Math.random() * moods.length)];
     showMood(randomMood);
 }
 
+// Display playlist and animations
 function showMood(mood) {
-    const playlistId = moodToSpotify[mood];
-    const color = moodColors[mood] || "#000000";
-
-    if (!playlistId) {
+    const playlists = moodToSpotify[mood];
+    if (!playlists) {
         document.getElementById("suggestions").innerHTML =
             "Mood not recognized. Try: happy, sad, relaxed, angry, excited, tired, focused, bored.";
         document.getElementById("player").innerHTML = "";
@@ -44,11 +47,18 @@ function showMood(mood) {
         return;
     }
 
+    // Randomly pick one playlist if multiple
+    const playlistId = playlists[Math.floor(Math.random() * playlists.length)];
+    const color = moodColors[mood] || "#000000";
+
+    // Set background color
     document.body.style.background = color;
+
+    // Update suggestions text
     document.getElementById("suggestions").innerHTML = `Mood: <b>${mood}</b> → Enjoy your playlist`;
 
+    // Display Spotify embed
     const playerDiv = document.getElementById("player");
-    // Correct Spotify embed attributes
     playerDiv.innerHTML = `
         <iframe src="https://open.spotify.com/embed/playlist/${playlistId}"
                 width="100%" height="380" frameborder="0"
@@ -57,6 +67,7 @@ function showMood(mood) {
     playerDiv.style.opacity = 0;
     setTimeout(() => { playerDiv.style.opacity = 1; }, 100);
 
+    // Start animated circles
     startAnimation(color);
 }
 
