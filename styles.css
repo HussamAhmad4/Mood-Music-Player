@@ -1,0 +1,49 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #000000;
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+    transition: background 1s ease;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    position: relative;
+    z-index: 1;
+}
+
+h1 { font-size: 42px; margin-bottom: 5px; }
+.subtitle { opacity: 0.85; margin-bottom: 20px; }
+
+input {
+    width: 80%; padding: 12px; border-radius: 8px; border: none;
+    margin-bottom: 15px; font-size: 18px;
+}
+
+button {
+    background: #1DB954; border-radius: 8px; border: none;
+    padding: 12px 25px; font-size: 16px; cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin: 5px;
+}
+button:hover { background: #1ed760; transform: scale(1.05); }
+
+#suggestions { margin-top: 25px; font-size: 18px; opacity: 0.9; }
+#player { margin-top: 30px; opacity: 0; transition: opacity 1s ease; }
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
