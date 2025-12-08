@@ -1,58 +1,27 @@
 const playlists = {
-  happy: [
-    "Happy - Pharrell Williams",
-    "Good As Hell - Lizzo",
-    "Can't Stop The Feeling - Justin Timberlake"
-  ],
-
-  chill: [
-    "Sunset Lover - Petit Biscuit",
-    "Location - Khalid",
-    "Pink + White - Frank Ocean"
-  ],
-
-  sad: [
-    "Someone Like You - Adele",
-    "Fix You - Coldplay",
-    "All I Want - Kodaline"
-  ],
-
-  mad: [
-    "Lose Yourself - Eminem",
-    "Break Stuff - Limp Bizkit",
-    "Smells Like Teen Spirit - Nirvana"
-  ],
-
-  hype: [
-    "POWER - Kanye West",
-    "Turn Down For What - DJ Snake",
-    "Can't Hold Us - Macklemore"
-  ],
-
-  sleep: [
-    "Weightless - Marconi Union",
-    "Night Owl - Galimatias",
-    "River - Leon Bridges"
-  ],
-
-  focus: [
-    "Lo-fi Beats Mix",
-    "Study Music 2024",
-    "Chillhop Essentials"
-  ]
+  happy: "https://open.spotify.com/embed/playlist/37i9dQZF1DXdPec7aLTmlC",
+  chill: "https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6",
+  sad: "https://open.spotify.com/embed/playlist/37i9dQZF1DX7qK8ma5wgG1",
+  mad: "https://open.spotify.com/embed/playlist/37i9dQZF1DX9qNs32fujYe",
+  hype: "https://open.spotify.com/embed/playlist/37i9dQZF1DX76Wlfdnj7AP",
+  sleep: "https://open.spotify.com/embed/playlist/37i9dQZF1DWZd79rJ6a7lp",
+  focus: "https://open.spotify.com/embed/playlist/37i9dQZF1DX3PFzdbtx1Us"
 };
+
+const moods = Object.keys(playlists);
 
 function generatePlaylist() {
   const mood = document.getElementById("moodSelect").value;
-  const list = playlists[mood];
+  setPlaylist(mood);
+}
 
-  const playlistUI = document.getElementById("playlist");
-  playlistUI.innerHTML = "";
+function randomMood() {
+  const random = moods[Math.floor(Math.random() * moods.length)];
+  document.getElementById("moodSelect").value = random;
+  setPlaylist(random);
+}
 
-  list.forEach(song => {
-    const li = document.createElement("li");
-    li.textContent = song;
-    playlistUI.appendChild(li);
-  });
+function setPlaylist(mood) {
+  document.getElementById("spotifyPlayer").src = playlists[mood];
 }
 
