@@ -1,57 +1,63 @@
-const playlists = {
-  happy: [
-    "Happy - Pharrell Williams",
-    "Good As Hell - Lizzo",
-    "Can't Stop The Feeling - Justin Timberlake"
-  ],
-
-  chill: [
-    "Sunset Lover - Petit Biscuit",
-    "Location - Khalid",
-    "Pink + White - Frank Ocean"
-  ],
-
-  sad: [
-    "Someone Like You - Adele",
-    "Fix You - Coldplay",
-    "All I Want - Kodaline"
-  ],
-
-  mad: [
-    "Lose Yourself - Eminem",
-    "Break Stuff - Limp Bizkit",
-    "Smells Like Teen Spirit - Nirvana"
-  ],
-
-  hype: [
-    "POWER - Kanye West",
-    "Turn Down For What - DJ Snake",
-    "Can't Hold Us - Macklemore"
-  ],
-
-  sleep: [
-    "Weightless - Marconi Union",
-    "Night Owl - Galimatias",
-    "River - Leon Bridges"
-  ],
-
-  focus: [
-    "Lo-fi Beats Mix",
-    "Study Music 2024",
-    "Chillhop Essentials"
-  ]
-};
-
-function generatePlaylist() {
-  const mood = document.getElementById("moodSelect").value;
-  const list = playlists[mood];
-
-  const playlistUI = document.getElementById("playlist");
-  playlistUI.innerHTML = "";
-
-  list.forEach(song => {
-    const li = document.createElement("li");
-    li.textContent = song;
-    playlistUI.appendChild(li);
-  });
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
+
+/* FULL CENTERING */
+body {
+  display: flex;
+  justify-content: center;   /* horizontal */
+  align-items: center;       /* vertical */
+  min-height: 100vh;
+  background-color: #121212;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  background-color: #1e1e1e;
+  padding: 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 12px rgba(0,0,0,.4);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #43a047;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px;
+  margin-top: 6px;
+  background-color: #2b2b2b;
+  border-radius: 6px;
+}
+
