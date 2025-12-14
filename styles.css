@@ -1,172 +1,40 @@
-/* RESET */
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* BACKGROUND */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background:
-    radial-gradient(circle at top, #1db95433, transparent 40%),
-    linear-gradient(135deg, #0f0f0f, #141414);
-
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1db954, #121212);
   color: white;
-}
-
-/* CARD CONTAINER */
-.container {
-  width: 100%;
-  max-width: 430px;
-
-  padding: 32px 28px;
-  border-radius: 20px;
-
-  background: rgba(20, 20, 20, 0.85);
-  backdrop-filter: blur(14px);
-
-  box-shadow:
-    0px 20px 50px rgba(0,0,0,0.7),
-    inset 0 0 0 1px rgba(255,255,255,0.05);
-
   text-align: center;
-
-  animation: fadeUp 0.6s ease;
+  margin: 0;
+  padding: 20px;
 }
 
-/* HEADER */
-h1 {
-  margin: 0 0 14px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  font-size: 26px;
+.hidden {
+  display: none;
 }
 
-/* SUBTEXT */
-p {
-  margin: 0 0 14px;
-  opacity: 0.7;
+input, select, button {
+  padding: 10px;
+  margin: 5px;
 }
 
-/* SELECT DROPDOWN */
-select {
-  width: 100%;
-  padding: 13px 15px;
-
-  border: none;
-  border-radius: 12px;
-
-  background: linear-gradient(145deg, #222, #191919);
-  color: #fff;
-
-  font-size: 16px;
-  outline: none;
-
-  box-shadow:
-    inset 0 2px 6px rgba(0,0,0,0.5),
-    inset 0 -1px 0 rgba(255,255,255,0.03);
-}
-
-/* BUTTON CONTAINER */
-.buttons {
-  display: flex;
-  gap: 12px;
-  margin-top: 14px;
-}
-
-/* BUTTON STYLES */
 button {
-  flex: 1;
-  padding: 12px 16px;
-
-  border: none;
-  border-radius: 14px;
-
-  background: linear-gradient(135deg, #1ed760, #18b955);
-  color: #000;
-
-  font-weight: 600;
-  font-size: 15px;
-
   cursor: pointer;
-  transition: all 0.15s ease;
-
-  box-shadow:
-    0 6px 16px rgba(30, 215, 96, 0.35),
-    inset 0 -1px 0 rgba(0,0,0,0.12);
 }
 
-/* BUTTON HOVER EFFECT */
-button:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow:
-    0 10px 22px rgba(30, 215, 96, 0.45);
+#songsContainer {
+  margin: 20px auto;
+  width: 80%;
+  max-height: 300px;
+  overflow-y: auto;   /* ✅ SCROLL FIX */
+  border: 1px solid white;
+  padding: 10px;
 }
 
-/* BUTTON PRESS */
-button:active {
-  transform: scale(0.97);
+.song {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
 }
 
-/* RANDOM BUTTON ALT COLOR */
-.random {
-  background: linear-gradient(135deg, #333, #222);
-  color: white;
-
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.5),
-    inset 0 -1px 0 rgba(255,255,255,0.05);
+#publicPlaylists {
+  margin-top: 20px;
 }
 
-.random:hover {
-  background: linear-gradient(135deg, #3a3a3a, #262626);
-}
-
-/* SPOTIFY PLAYER */
-.player-container {
-  margin-top: 18px;
-  border-radius: 14px;
-  overflow: hidden;
-
-  box-shadow:
-    0 10px 24px rgba(0,0,0,0.4);
-
-  animation: fadeIn 0.4s ease;
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from { opacity: 0 }
-  to { opacity: 1 }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* MOBILE */
-@media (max-width: 480px) {
-  .container {
-    padding: 24px 20px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-}
